@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>クラゲ水族館ー図鑑</title>
+<meta name="description" content="クラゲの種類は世界で多数発見されています。このページを通してお気に入りのクラゲを見つけてみて下さい">
+	
+<!-- css -->	
+<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
+	<!-- cssのリセット -->
+<link href="http://fonts.googleapis.com/css?family=Philoshopher" rel="stylesheet">
+	<!-- Googleフォントの指定 -->
+<link rel="stylesheet" href="css/form.css">
+</head>
+									   
+<body>
+  <div id="zukan" class="big-bg"><!-- /ホームのメインバック背景を表示 -->
+    <header class="page-header wrapper">
+      <h1><img src="img/kurage.rogo8.png" alt="Jellyfish City_rogo"/></h1>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">ホーム</a></li>
+			<li><a href="zukan.html">図鑑</a></li>
+			  <li><a href="">アクセス</a></li>
+          </ul>
+        </nav>
+    </header>
+	  <!-- ↑上記は順番に要注意 header > h1 > nav > ul >li -->
+	<div class="wrapper">
+			<h2 class="page-title">form</h2>
+    </div><!---/.wrapper -->
+	
+	    <!--お問い合わせフォーム-->
+		<div class="syashin">
+			<!--名前の項目:type="text" name="yourname",文字を選んでも選択項目が現れるfor,id--><!--placeholderで参考例を入れる事ができる-->
+			<form>
+				<p class="lead-form"><span class="moji">お問い合わせ</span></p>
+				<div class="item">
+					<label class="label" for="rendou">お名前　</label>
+					<input class="inputs" id="rendou" type="text" name="yourname" placeholder="山田太郎">
+				</div>
+				<!--番号の項目：type="number" name="bangou",同上-->
+				<div class="item">
+					<label class="label" for="num">電話番号</label>
+					<input class="inputs" id="num" type="tel" name="bangou" placeholder="000-0000-0000">
+				</div>
+				<!--メールの項目:type="email" name="mail",同上-->
+				<div class="item">
+					<label class="label" for="mail">メール　</label>
+					<input class="inputs" id="mail" type="email" name="mail" placeholder="×××@kurage.com">
+				</div>
+				<!--コメントの項目：name="comment"-->
+				<div class="item">
+					<label class="label" for="comment">コメント</label>
+					<textarea class="inputs" id="comment" name="comment" placeholder="ここには自由にコメントを記入してください"></textarea>
+				</div>
+				<!--セレクトボックス---
+				<div class="item">
+					<select name="kurge">
+						<option value="akakurage">赤クラゲ</option>
+						<option value="kikurage">黄クラゲ</option>
+						<option value="aokurage">青クラゲ</option>
+					</select>
+				</div>-->
+				<!--チェックボックス-->
+				<div class="item">
+					<p class="label">性別を選択</p>
+						<div class="inputs">
+								<label class="kyori" for="male">
+								<input id="male" type="radio" name="sex" value="male">男性</label>
+								<label class="kyori" for="female">
+								<input id="famale" type="radio" name="sex" value="famale">女性</label>
+						</div>
+					<p class="label">好きなクラゲのサイズ</p>
+						<div class="inputs">
+							<label class="kyori2" for="ookii">
+							<input id="ookii" type="checkbox" name="ookisa" value="大きい">大きい</label>
+							<label class="kyori2" for="futuu">
+							<input id="futuu" type="checkbox" name="futuu" value="普通">普通</label>
+							<label class="kyori2" for="syou">
+							<input id="syou" type="checkbox" name="syou" value="小さい">小さい</label>
+						</div>
+				</div>
+				<!--ここまで-->
+				<!--送信や今まで記入した物を一気にリセットをかけるボタン-->
+				<div class="btn-area">
+					<input type="submit" value="送　信">
+					<input type="reset" value="リセット">
+				</div>
+				<!--ここまで-->
+				<p>------------------------------●○●------------------------------</p>
+				<span class="moji">アクセス</span>
+				<div class="map">
+					  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.469655694769!2d139.74474086492722!3d35.69005858019222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c6e84219be1%3A0xf0ada1dc491b163c!2z44CSMTAyLTAwNzUg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65LiJ55Wq55S6!5e0!3m2!1sja!2sjp!4v1574993430976!5m2!1sja!2sjp" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	  			</div>
+				<h4>クラゲ水族館</h4>
+				<p>電話番号:000-0000-0000</p>
+				<p>場所：〒102-0075 東京都千代田区三番町 クラゲ水族館</p>
+			</form>
+		</div>
+	    <!--/お問い合わせフォーム終わり-->
+	</div>
+<footer>
+	<div class="wrapper">
+		<p><small>&copy; 2019 kurage</small></p>
+	</div>
+</footer>
+</body>
+</html>

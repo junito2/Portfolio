@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* ↑コードの文字化け対策 */
+/* CSS Document */
+/* 共有部分
+---------------------------- */
+html{
+	font-size: 100%;
+	/* ユーザーが指定した文字サイズを正しく反映 */
+}
+body{
+	font-family:"Yu Gothic Medium","遊ゴシック Medium","YuGOthic","遊ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+	line-height:1.7;
+	color: #ffffff;
+   /* 書体の指定 */
+   /* 行の高さの指定 */
+   /* 色の指定 */
+}
+a{
+	text-decoration: none;
+   /* <a>タグの傍線傍線（字のわきに引いたせん。サイドライン。）の指定*/
+}
+img{
+	max-width: 100%;
+/* 画像の大きさの指定 */
+}
+
+/* heder
+--------------------------------*/
+.logo{
+	width: 210px;
+	margin-top: 14px;
+}
+
+.nav{
+	font-family:"游ゴシック体 ボールド";
+	display: flex;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	margin-top: 34px;
+	list-style: none;
+}
+.nav li {
+	margin-left: 36px;
+}
+.nav a {
+	ext-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #2962FF;
+	color: #ffffff;
+}
+.nav a:hover {
+	text-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #FF05F6,
+		0 0 0.15em #FF05F6,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #FF05F6;
+	color: #ffffff;
+}
+/* .navを横並びメニューにする */
+.page-header{
+	display: flex;
+	/* 横並びの指定 */
+	justify-content: space-between;
+	/* 両端の設置の指定 */
+}
+/* コンテンツの最大表示幅を設定 */
+.wrapper{
+	max-width: 1100px;
+	/* 横幅最大1100pxの指定 */
+	margin: 0 auto;
+	/* 中央に配置する指定 */
+	padding: 0 4%;
+	/* スマートフォン向け余白の指定 */
+	/* この指定を行う事で狭いスマホの画面サイズで見ても違和感のない両端の余白ができ見やすくなる */
+}
+
+.page-title{
+	font-size: 100px;
+	font-family: 'philosopher',serif;
+	font-weight: none;
+	/* フォントの指定を入れている*/
+	
+	text-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #2962FF;
+
+}
+
+/* zukan
+-----------------------------*/
+#zukan {
+	background-image:url(../img/108959.jpg);
+	height: 270px;
+	margin-bottom: 40px;
+}
+#zukan .page-title{
+	text-align: center;
+}
+
+.syashin{ 						/* 親ボックス */
+	text-align: center;         /* 写真を中央に寄せる */
+    padding:  0.5px;
+	border-top: solid 5px #F5FF00;
+	border-bottom: solid 5px #F5FF00;
+	background-image:url(../img/108959.jpg);
+	background-blend-mode:exclusion;
+}
+
+.syashin-in{
+	height: 380px;
+	background-color: #031524;
+	display: inline-block;		/* 写真を横に並べる子要素 */
+}
+
+.box-name{
+	display: table-cell;
+	vertical-align:middle;
+	height: 70px;
+	width: 290px;
+	margin: 0;
+	padding: 0 20px;
+	text-align: center;
+}
+
+
+.name{
+	font-family:Galvji, "游ゴシック体 ボールド";
+	font-size:20px;
+	color: #FFFFFF;
+}
+
+
+.syashin img{
+	width: 300px;
+	height: 300px;
+}
+
+figure {    /*画像を隠したいので同じ大きさで*/
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+figcaption {       /*触る前の画像の状態*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /*画像の重なる順番*/
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  transition: .3s;
+  opacity: 0;
+}
+figcaption h3,
+figcaption p {
+  position: absolute;
+  left: -100%;   /*文字を左に隠す*/
+  width: 260px;  /*文字ボックス*/
+  transition: .3s;  /*0.3秒後に左から現れ定位置へ*/
+}
+figcaption h3 {
+  top: 30px;  /*h3要素の上から何センチ離すか*/
+}
+figcaption p {
+  top: 75px;  /*p要素の上から何センチ離すか*/
+  text-align: left;  /*書式左づめ*/
+}
+figure:hover figcaption { 
+  opacity: 1;  /*figure要素をタッチしたとき透明１回復する*/
+}
+figure:hover figcaption h3,
+figure:hover figcaption p {
+  left: 20px;  /*figure要素をタッチしたときh３とp要素の文字の位置が左から何PXの値にあるか*/
+}
+figure:hover figcaption h3 {
+  transition-delay: .2s;   /*figure要素をタッチしたとき0.2秒後に表示*/
+}
+figure:hover figcaption p {
+  transition-delay: .5s;  /*figure要素をタッチしたとき0.５秒後に表示*/
+}
+
+
+/*
+.syashin-in .migi{
+}
+
+.syashin .mask{
+	opacity: 0;
+}*/
+
+/* フッター
+-----------------------------*/
+footer {
+	background: #432;
+	text-align: center;
+	padding: 26px 0 ;
+}
+footer p {
+	color: #fff;
+	font-size: 0.875rem;
+}

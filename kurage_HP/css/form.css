@@ -1,0 +1,252 @@
+@charset "UTF-8";
+/* ↑コードの文字化け対策 */
+/* CSS Document */
+/* 共有部分
+---------------------------- */
+html{
+	font-size: 100%;
+	/* ユーザーが指定した文字サイズを正しく反映 */
+}
+body{
+	font-family:"Yu Gothic Medium","遊ゴシック Medium","YuGOthic","遊ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+	line-height:1.7;
+	color: #ffffff;
+   /* 書体の指定 */
+   /* 行の高さの指定 */
+   /* 色の指定 */
+}
+a{
+	text-decoration: none;
+   /* <a>タグの傍線傍線（字のわきに引いたせん。サイドライン。）の指定*/
+}
+img{
+	max-width: 100%;
+/* 画像の大きさの指定 */
+}
+
+/* heder
+--------------------------------*/
+.logo{
+	width: 210px;
+	margin-top: 14px;
+}
+
+	
+/* zukan
+-----------------------------*/
+#zukan {
+	background-image:url(../img/108959.jpg);
+	background-repeat: repeat-y;
+	height: 100%;
+	margin-bottom: 0px;
+}
+#zukan .page-title{
+	text-align: center;
+}
+
+
+.nav{
+	font-family:"游ゴシック体 ボールド";
+	display: flex;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	margin-top: 34px;
+	list-style: none;
+}
+.nav li {
+	margin-left: 36px;
+}
+.nav a {
+	ext-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #2962FF;
+	color: #ffffff;
+}
+
+.nav a:hover {
+	text-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #FF05F6,
+		0 0 0.15em #FF05F6,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #FF05F6;
+	color: #ffffff;
+}
+/* .navを横並びメニューにする */
+.page-header{
+	display: flex;
+	/* 横並びの指定 */
+	justify-content: space-between;
+	/* 両端の設置の指定 */
+}
+/* コンテンツの最大表示幅を設定 */
+.wrapper{
+	max-width: 1100px;
+	/* 横幅最大1100pxの指定 */
+	margin: 0 auto;
+	/* 中央に配置する指定 */
+	padding: 0 4%;
+	/* スマートフォン向け余白の指定 */
+	/* この指定を行う事で狭いスマホの画面サイズで見ても違和感のない両端の余白ができ見やすくなる */
+}
+
+.page-title{
+	font-size: 100px;
+	font-family: 'philosopher',serif;
+	font-weight: none;
+	/* フォントの指定を入れている*/
+	
+	text-align:center;
+	line-height:0.95em;
+	text-shadow: 
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #FF05F6,
+		0 0 1.00em #2962FF;
+}
+
+/*---------コンテンツ-------------*/
+
+/*　　formコンテンツ　　*/
+.syashin{ 						/* 親ボックス */
+	width: 100%;
+	height: 100%;
+	font-color: #ffffff;
+	text-align: center;         /* 写真を中央に寄せる */
+    padding:  0.5px;
+	border-top: solid 5px #F5FF00;
+	border-bottom: solid 5px #F5FF00;
+	background-image:url(../img/108959.jpg);
+	background-blend-mode:exclusion; 
+	display: block;
+}
+
+form{
+	width: 500px;
+	height: 100%;
+	margin:0 auto;
+    background-blend-mode:darken;
+	background: rgba(255,0,0,0.2);
+}
+
+
+.lead-form{
+	width: 500px;
+	text-align: center;
+}
+
+.moji{
+	font-size: 50px;
+	margin:10px 0;
+	border-left:10px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+.item{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.label{
+	float: left;
+	margin-right: 20px;
+	width: 135px;
+	padding-left: 10px;
+	line-height: 1em;
+}
+
+.inputs{
+	color: #ffffff;
+	float: left;
+	width: 300px;
+}
+
+input[type="text"],input[type="tel"],input[type="email"]{
+	border: solid 1px #ffffff;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 15px;
+}
+
+select{
+	color:#FFFFFF;
+}
+
+
+textarea{
+	border: solid 1px#ffffff;
+	border-radius:5px;
+	padding: 10px;
+	height: 160px;
+	font-size: 15px;
+	resize: both;       /*コメント枠とを広げる要素*/
+}
+/*radio,checkboxの調整：class+classで間にmarginをいれ距離をとる*/
+.kyori+.kyori{
+	margin-left: 50px;
+}
+
+.kyori2+.kyori2{
+	margin-left: 20px;
+}
+/*ここまで*/
+
+
+input[type="submit"]{
+	width: 120px;
+	background: #FF4D50;
+	border: none;
+    border-radius: 5px;
+	color: white;
+	font-size:17px;
+	font-weight: bold;
+	padding: 10px 20px;
+	margin: 0 5px;
+}
+
+input[type="reset"]{
+	width: 120px;
+	background-color: #FF4D50;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 10px 20px;
+	margin:0 5px;
+}
+
+.syashin-in{
+	height: 380px;
+	background-color: #031524;
+}
+
+.btn-area{
+	text-align: center;
+}
+
+.map{
+	position: relative;
+	margin: 0 0 10px 0;
+}
+
+.map inframe{
+	position: absolute;
+}
+
+
+/* フッター
+-----------------------------*/
+footer {
+	background: #432;
+	text-align: center;
+	padding: 26px 0 ;
+}
+footer p {
+	color: #fff;
+	font-size: 0.875rem;
+}

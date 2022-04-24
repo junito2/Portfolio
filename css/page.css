@@ -1,0 +1,715 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* --------------------------------
+            共有部分<開始>
+----------------------------------*/
+
+html {
+	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
+}
+
+
+/*　--------------------------------
+             共有部分<終了>
+----------------------------------*/
+
+/* --------------------------------
+         大きな背景画像<開始>
+----------------------------------*/
+#home{ /*ホーム全体に画像を広げるにはbody内のdivを指定する*/
+
+	background-repeat: repeat-y; /*繰り返さない*/
+	background-image: url("../img/back.png");
+	height: auto; /*高さを変えても合わせてくれる*/
+}
+
+
+/* --------------------------------
+         大きな背景画像<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            ハンバーガー<開始>
+----------------------------------*/
+
+.page-header{
+	display: flex;
+}
+
+#menu {
+	width: 47px;
+	height: 43px;
+	background: #000;
+}
+
+#menu.active {
+	background:rgba(0,0,0,0.00);
+}
+
+
+
+.menu-trigger {
+    display: block;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    top: 20px;    
+    cursor: pointer;
+    z-index: 9;
+    text-align: center;	
+	border-radius: 10px;
+	
+}
+ 
+.menu-trigger span {
+    display: block;
+    position: absolute;    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #178DFC;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+	border-radius: 5px;
+}
+ 
+.menu-trigger span:nth-of-type(1) {
+  top: 5px;
+}
+.menu-trigger span:nth-of-type(2) {
+  width: 20px;
+  top: 15px;
+}
+.menu-trigger span:nth-of-type(3) {
+  top: 25px;
+}
+
+ 
+.menu-trigger span:nth-child(4) {
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    top: 27px;
+	color: #178DFC;
+}
+	
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(7px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-13px) rotate(45deg);
+  transform: translateY(-13px) rotate(45deg);
+}
+
+
+/*--------------------------------
+            ハンバーガー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            メニュー<開始>
+----------------------------------*/
+.main-nav{         /*メニューの親*/
+    position: fixed;/*ポジションを端寄せ*/
+    z-index: 7; /*レイヤー7*/
+    top: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.7); /*メニュー背景半透明化*/   
+    text-align: center; /*親の体裁*/
+    transform: translateX(100%); /*メニューを開く*/
+    transition: all 0.6s; /*メニュー（プロパティ全体）が現れるまでに何秒かかるか*/
+    width: 250px;
+	height: 100%;
+	padding-top: 100px; /*メニュー項目を上からどれだけ離すか*/
+}
+ 
+.main-nav ul {
+    list-style: none; /*リストの箇条書きの初期の点を消す*/
+    width: 200px;
+	margin: 0 auto;
+}
+ 
+ 
+.main-nav ul li a {
+    display: inline-block;
+	color: #178DFC;
+    text-decoration: none;
+    padding-top: 25px;
+	font-size: 45px;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.main-nav ul li a:hover {
+	color:#fff;
+	font-size: 50px;
+	text-shadow: 0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+
+
+.main-nav ul li a:after {
+	content: ""; /*afterの指定*/
+	width: 100%;
+	height: 2px;
+	background: #FFFFBB;
+	right: 0;
+	position: absolute;
+	margin-top: 60px;
+	transform: scale(0,1); /*右から線が出る*/
+	transform-origin: right; /*右に隠す*/
+	transition: 0.4s; /*線が出てくる時間*/
+	box-shadow:  0 0 8px white; /*箱に対する影*/
+}
+
+.main-nav ul li a:hover:after{
+	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/	
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.main-nav.active {
+    transform: translateX(0%); /*メニューを閉じる*/
+}
+
+.icon {
+	width: 250px; /*icon親*/
+	position: absolute; /*main-navの中にiconの親の位置はどこに置くか（相対位置）*/
+	bottom: 0; /*相対位置を初期値より下へ*/
+	margin-bottom: 15px; /*a要素にはかからなかたで親の位置を調整する*/
+}
+
+.icon a {
+	font-size: 35px; /*iconはインライン要素なのでfont-sizeで指定*/
+	color: #178DFC; /*上記と同じなのでbackgroundではなくcolorで色付け*/
+    margin-left: 30px; /*iconの位置調整*/
+}
+
+
+.icon a:hover {
+    color:#FBF8CF;
+	font-size: 40px;
+	text-shadow: 
+	0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+/* --------------------------------
+            メニュー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            h1-tittle<開始>
+----------------------------------*/
+.tittle{
+	
+	overflow: hidden;/*タイトル幅が原因で右に変な余白ができるのでこの要素を入れる。ボックスより超えた要素を隠してくれる*/
+}
+
+h1 {
+	font-family: Impact;
+	font-size: 100px;
+	margin-left: 1px;
+	color: rgba(255,255,255,0.70);
+	letter-spacing: -0.02em; /*字左右幅調整*/
+	white-space: nowrap; /*文字を折り返さない*/
+}
+
+
+/* --------------------------------
+            h1-tittle<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+          メイン画像<開始>
+----------------------------------*/
+.content {
+	width: 100%;
+	display: flex; /*中の四角を浮かせる*/
+}
+
+
+.home-content {
+	width: 410px;
+	height: 550px;
+	background-color: rgba(0,0,0,0.50);
+	text-align: center;
+	margin-left: 30%;
+	margin-bottom: 50px;
+	display: flex;
+	transition: 2s;
+}
+
+.mini-box {
+	width: 380px;
+	margin: 15px;
+	z-index: 2; /*shousaiより上の存在（順番付け）*/
+	background-color: #fff;
+	
+}
+
+.mini-box img {
+	width: 380px;
+	height: 520px;
+	position: relative;
+	
+}
+
+.mini-box a {
+	position: absolute;
+	left: 39%;
+    top: 560px;
+	display: inline-block;
+	width: 200px;
+	height: 30px;
+	border: 2px solid #178DFC;
+	border-radius: 5px;
+	font-size: 14pt;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;	
+	background: #178DFC;
+	color: #fff;	
+	transition: 2s;
+	box-shadow: 6px 6px 2px #666666;
+}
+
+
+.mini-box a:hover {
+	box-shadow: none;
+	color: #178DFC;
+	background: #fff;
+}
+
+
+.home-content.active { /*jqueryでbuttonにクリック処理をして、その後どうcssで処理したいか指示を与える（active）*/
+	width: 100%;
+	margin-left: 40px;
+	padding-right: 5px;
+	-webkit-transition: all 4s;
+}
+
+.mini-box.active { /*jqueryでbuttonにクリック処理をして、その後どうcssで処理したいか指示を与える（active）*/ 
+	width: 380px;
+	margin-left: 15px;
+	margin-right: 0;
+	-webkit-transition: all 2s;
+}
+
+.mini-box.active a  {
+	position: absolute;
+	left: 12%;
+    color: #fff;
+	text-decoration: none;
+	margin-right: 0;
+	-webkit-transition: all 4s;
+}
+
+
+.mini-box.active a:hover {
+	color: #0ad0ff;
+	opacity: 1;
+}
+
+
+/* --------------------------------
+         メイン画像<終了>
+----------------------------------*/
+
+/* --------------------------------
+        詳細ボタン<開始>
+----------------------------------*/
+.button {
+	width: 20px;
+	height: 70px;
+	background-color: rgba(0,0,0,0.50);
+	margin-top: 240px;
+	margin-right: 30px;
+	border-radius: 0 5px 5px 0;
+	color: #178DFC;
+	font-weight: bold;	
+}
+
+.button p:nth-child(1) {
+	margin-top: 100%;
+	height: 13px;
+}
+
+.button p:nth-child(2) {
+	margin: 0px;
+	height: 1px;
+}
+
+.button p:nth-child(3) {
+	margin: 0px;
+	height: 1px;
+	margin-top: 4px;
+}
+
+
+
+
+/* --------------------------------
+        詳細ボタン<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+        詳細内容<開始>
+----------------------------------*/
+
+.shousai {
+	width: 0px;
+	height: 520px;
+	background: #fff;
+	margin: 15px auto;
+	z-index: 1;
+	-webkit-transition: all 3s;
+	-webkit-transform: translate(-200px, 0);
+  	opacity: 0;
+	overflow-y: scroll;
+	color: #178DFC;
+}
+
+.shousai.active {
+	-webkit-transition: all 4s;
+	-webkit-transform: translate( 0, 0);
+  	opacity: 1;  
+	width: 100%;
+	margin: 15px 15px 15px 0;
+}
+
+.shousai h2 {
+	margin-top: 15px;
+	font-size: 25px;
+}
+
+.shousai section {
+	text-align: left;
+	margin: 0 15px ;
+	font-size: 18px;
+}
+
+.shousai section p {
+	font-size: 15px;
+}
+
+.shousai section p:nth-child(2){
+	margin: 5px 25px;
+}
+
+/* --------------------------------
+        詳細内容<終了>
+----------------------------------*/
+
+/* --------------------------------
+         box画像<開始>
+----------------------------------*/
+
+
+.leftbox {
+	width: 100%;
+	margin-right: 0;
+    overflow: hidden;
+}
+
+.box {
+	display: flex;/*横並び*/
+	width: 80%;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
+	height: 200px;	
+}
+
+.box img:nth-child(1){
+  -webkit-transition: all 5s;/*一番右の箱のコンテンツを表示させる時間*/
+  -webkit-transform: translate(0, 0);/*現在値*/  
+    background-color: #ADADAD;
+	width: 300px;/*個々の箱の大きさ（横縮小対応）*/
+	z-index: 3;
+}
+
+.box img:nth-child(1).move {      /*htmlに記載はないがjqueryを動かすための名称(move)*/
+	-webkit-transition: all 5s;
+    -webkit-transform: translate(0, 0);
+	z-index: 3;
+}
+
+.box img:nth-child(2){
+    -webkit-transition: all 6s;
+    -webkit-transform: translate(0, 0);
+  	opacity: 1;
+	background-color: #636363;
+	width: 300px;/*個々の箱の大きさ（横縮小対応）*/
+	z-index: 2;
+}
+.box img:nth-child(2).move {
+	-webkit-transition: all 6s;
+    -webkit-transform: translate(-800px, 0);
+  	opacity: 0;
+	z-index: 2;
+}
+
+.box img:nth-child(3){
+-webkit-transition: all 6s;/*一番右の箱のコンテンツを表示させる時間*/
+  -webkit-transform: translate(0, 0);/*現在値*/
+	background-color:#ADADAD;
+	width: 300px;/*個々の箱の大きさ（横縮小対応）*/
+	z-index: 1;
+	opacity: 1;
+}
+.box img:nth-child(3).move {
+  -webkit-transition: all 6s;/*一番右の箱のコンテンツを表示させる時間*/
+  -webkit-transform: translate(-2000px, 0);/*現在値*/
+	opacity: 0;
+  	z-index: 1;
+}
+
+
+.box2 {
+	width: 80%;/*箱全体のサイズ（横縮小対応大元の箱）*/
+	margin-bottom: 50px;
+	height: auto;
+	color: #178DFC
+}
+
+.box2 h2,.box2 p {
+    -webkit-transition: all 6s;
+    -webkit-transform: translate(0, 0);
+  	opacity: 1;
+	background-color:#fff;
+	width: 80%;/*個々の箱の大きさ（横縮小対応）*/
+	
+}
+
+.box2 h2.move,.box2 p.move {
+  -webkit-transform: translate(-750px, 0);
+    opacity: 0;
+}
+
+.box2 h2 {
+	height: 40px;
+	padding: 5px;
+}
+
+.box2 p {
+	padding: 10px;
+}
+
+
+.rightbox {
+	width: 100%;
+	margin: 0 0 0 auto;/*右寄せの裏技。画面縮小しても左は自動に調整してくれる*/
+    overflow: hidden;
+	
+}
+
+.box3 {
+	display: flex;/*横並び*/
+	flex-flow: row-reverse;/*順番の入れ替え*/
+	width: 70%;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
+	height: auto;	
+	margin-left: 30%;
+
+}
+
+.box3 img {
+	width: 100%;
+    
+    background-color: #ADADAD;
+	z-index: 3;
+}
+
+
+.box3 img:nth-child(2){
+    -webkit-transition: all 6s;
+    -webkit-transform: translate(0, 0);
+    opacity: 1;
+	background-color:#636363;
+	z-index: 2;
+	width: 100%;
+}
+
+
+.box3 img:nth-child(2).move {
+    -webkit-transform: translate(300px, 0);
+    opacity: 0;
+	z-index: 2;
+}
+
+.box3 img:nth-child(3){
+    -webkit-transition: all 6s;
+    -webkit-transform: translate(0, 0);
+  	opacity: 1;
+	background-color:#ADADAD;
+	width: 100%;/*個々の箱の大きさ（横縮小対応）*/
+	z-index: 1;
+}
+.box3 img:nth-child(3).move {
+    -webkit-transform: translate(600px, 0);
+    opacity: 0;
+	z-index: 1;
+}
+
+
+.box4 {
+	width: 60%;/*箱全体のサイズ（横縮小対応大元の箱）*/
+	margin: 0 0 20px auto;/*右寄せの裏技。画面縮小しても左は自動に調整してくれる*/
+	color: #178DFC;
+}
+
+.box4 h2,.box4 p{
+	-webkit-transition: all 4s;
+    -webkit-transform: translate(0, 0);
+  	opacity: 1;
+	background-color:#fff;	
+	height: auto;
+}
+.box4 h2.move,.box4 p.move{	
+    -webkit-transform: translate(500px, 0);/*現在値より右に300pxの位置にある*/
+    opacity: 0;
+}
+
+.box4 h2 {
+	height: 40px;
+	padding: 5px;
+}
+
+.box4 p {
+	padding: 10px;
+}
+
+/* --------------------------------
+         box画像<終了>
+----------------------------------*/
+
+/* --------------------------------
+         page切替<開始>
+----------------------------------*/
+.page {
+	text-align: center;
+	margin: 0 auto 10px;
+
+}
+
+
+.page a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	border: 2px solid #178DFC;
+	border-radius: 5px;
+	font-size: 14pt;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;	
+	background: #178DFC;
+	color: #fff;	
+	transition: 3s;
+	box-shadow: 6px 6px 2px #666666;
+}
+
+
+
+.page a:hover {
+	box-shadow: none;
+	color: #178DFC;
+	background: #fff;
+}
+
+.page2 {
+	margin: auto 10px;
+}
+
+
+/* --------------------------------
+         page切替<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            footer<開始>
+----------------------------------*/
+
+footer {
+	display:inline-block;
+	width: 100%;
+	height: auto;
+	background: #000;
+	text-align: center;
+    padding-top:15px;
+	color: #178DFC;
+}
+
+.sitemap {
+	display: flex;
+	font-size: 10px;
+	color: #178DFC;
+	margin-bottom: 5px;
+	justify-content: center;
+}
+
+.sitemap a {
+	color: #178DFC;
+	text-decoration: none;
+}
+
+.sitemap a:hover {
+	color: #0ad0ff;
+	opacity: 1;
+}
+
+.mae {
+	padding-top: 2px;
+	opacity: 0.5;
+}
+
+.genzai {	
+	font-size: 13px;
+	opacity: 0.6;
+}
+
+
+/* --------------------------------
+            footer<終了>
+----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

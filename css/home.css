@@ -1,0 +1,279 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* --------------------------------
+            共有部分<開始>
+----------------------------------*/
+
+html {
+	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
+}
+
+
+/*　--------------------------------
+             共有部分<終了>
+----------------------------------*/
+
+/* --------------------------------
+         大きな背景画像<開始>
+----------------------------------*/
+#home{ /*ホーム全体に画像を広げるにはbody内のdivを指定する*/
+	background-attachment: fixed;/*下の白背景なくして画像幅で埋める*/
+	background-size: cover;/*画像の縦横比率を保ったまま画面いっぱいに広げる*/
+	background-position: center center;/*画像を中央位置から開始、no-repeatと一緒に使用することが多く、指定しない状態だと左上がポジションとなるので、今回画像のズレが出た*/
+	background-repeat: no-repeat; /*繰り返さない*/
+	background-image: url("../img/back.png");
+	height: 100vh; /*高さを変えても合わせてくれる*/
+}
+
+
+/* --------------------------------
+         大きな背景画像<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            ハンバーガー<開始>
+----------------------------------*/
+
+.page-header{
+	display: flex;
+}
+
+#menu {
+	width: 47px;
+	height: 43px;
+	background: #000;
+}
+
+#menu.active {
+	background:rgba(0,0,0,0.00);
+}
+
+
+
+.menu-trigger {
+    display: block;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    top: 20px;    
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;	
+	border-radius: 10px;
+	
+}
+ 
+.menu-trigger span {
+    display: block;
+    position: absolute;    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #178DFC;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+	border-radius: 5px;
+}
+ 
+.menu-trigger span:nth-of-type(1) {
+  top: 5px;
+}
+.menu-trigger span:nth-of-type(2) {
+  width: 20px;
+  top: 15px;
+}
+.menu-trigger span:nth-of-type(3) {
+  top: 25px;
+}
+
+ 
+.menu-trigger span:nth-child(4) {
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    top: 27px;
+	color: #178DFC;
+}
+	
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(7px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-13px) rotate(45deg);
+  transform: translateY(-13px) rotate(45deg);
+}
+
+
+/*--------------------------------
+            ハンバーガー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            メニュー<開始>
+----------------------------------*/
+.main-nav{         /*メニューの親*/
+    position: fixed;/*ポジションを端寄せ*/
+    z-index: 2; /*レイヤー２*/
+    top: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.7); /*メニュー背景半透明化*/   
+    text-align: center; /*親の体裁*/
+    transform: translateX(100%); /*メニューを開く*/
+    transition: all 0.6s; /*メニュー（プロパティ全体）が現れるまでに何秒かかるか*/
+    width: 250px;
+	height: 100%;
+	padding-top: 100px; /*メニュー項目を上からどれだけ離すか*/
+}
+ 
+.main-nav ul {
+    list-style: none; /*リストの箇条書きの初期の点を消す*/
+    width: 200px;
+	margin: 0 auto;
+}
+ 
+ 
+.main-nav ul li a {
+    display: inline-block;
+	color: #178DFC;
+    text-decoration: none;
+    padding-top: 25px;
+	font-size: 45px;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.main-nav ul li a:hover {
+	color:#fff;
+	font-size: 50px;
+	text-shadow: 0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+
+
+.main-nav ul li a:after {
+	content: ""; /*afterの指定*/
+	width: 100%;
+	height: 2px;
+	background: #FFFFBB;
+	right: 0;
+	position: absolute;
+	margin-top: 60px;
+	transform: scale(0,1); /*右から線が出る*/
+	transform-origin: right; /*右に隠す*/
+	transition: 0.4s; /*線が出てくる時間*/
+	box-shadow:  0 0 8px white; /*箱に対する影*/
+}
+
+.main-nav ul li a:hover:after{
+	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/
+	
+	
+	
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.main-nav.active {
+    transform: translateX(0%); /*メニューを閉じる*/
+}
+
+.icon {
+	width: 250px; /*icon親*/
+	position: absolute; /*main-navの中にiconの親の位置はどこに置くか（相対位置）*/
+	bottom: 0; /*相対位置を初期値より下へ*/
+	margin-bottom: 15px; /*a要素にはかからなかたで親の位置を調整する*/
+}
+
+.icon a {
+	font-size: 35px; /*iconはインライン要素なのでfont-sizeで指定*/
+	color: #178DFC; /*上記と同じなのでbackgroundではなくcolorで色付け*/
+    margin-left: 30px; /*iconの位置調整*/
+}
+
+
+.icon a:hover {
+    color:#FBF8CF;
+	font-size: 40px;
+	text-shadow: 
+	0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+/* --------------------------------
+            メニュー<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            home<開始>
+----------------------------------*/
+.content {
+	width: 100%;
+	height: 100%;
+	display: flex; /*中の四角を浮かせる*/
+	justify-content: center; /*flexの水平位置の調整*/
+	align-items: center; /*flexの垂直位置の調整*/
+}
+
+.home-content {
+	width: 500px;
+	height: 400px;
+	background-color: rgba(255,255,255,0.50);
+	border: 5px solid #000000;
+	text-align: center;
+}
+
+.mini-box {
+	width: 150px;
+	height: 150px;
+	margin: 30px auto 5px;
+}
+
+.mini-box img {
+	width: 125px;
+    height: 120px;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+.moji1,.moji2 {
+    font-size:80px;
+	font-family: 'Bodoni 72';
+    line-height: 0.7; /*字上下幅調整*/
+	letter-spacing: 0.3em; /*字左右幅調整*/
+	margin-left: 20px;
+}
+
+.moji3 {
+	font-size:30px;
+	margin-top: 10px;
+	letter-spacing: 0.3em; /*字左右幅調整*/
+}
+/* --------------------------------
+            home<終了>
+----------------------------------*/
+

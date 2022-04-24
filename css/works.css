@@ -1,0 +1,516 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* --------------------------------
+            共有部分<開始>
+----------------------------------*/
+
+html {
+	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
+}
+
+
+/*　--------------------------------
+             共有部分<終了>
+----------------------------------*/
+
+/* --------------------------------
+         大きな背景画像<開始>
+----------------------------------*/
+#home{ /*ホーム全体に画像を広げるにはbody内のdivを指定する*/
+
+	background-repeat: repeat-y; /*繰り返さない*/
+	background-image: url("../img/back.png");
+	height: auto; /*高さを変えても合わせてくれる*/
+}
+
+
+/* --------------------------------
+         大きな背景画像<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            ハンバーガー<開始>
+----------------------------------*/
+
+.page-header{
+	display: flex;
+}
+
+#menu {
+	width: 47px;
+	height: 43px;
+	background: #000;
+}
+
+#menu.active {
+	background:rgba(0,0,0,0.00);
+}
+
+
+
+.menu-trigger {
+    display: block;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    top: 20px;    
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;	
+	border-radius: 10px;
+	
+}
+ 
+.menu-trigger span {
+    display: block;
+    position: absolute;    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #178DFC;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+	border-radius: 5px;
+}
+ 
+.menu-trigger span:nth-of-type(1) {
+  top: 5px;
+}
+.menu-trigger span:nth-of-type(2) {
+  width: 20px;
+  top: 15px;
+}
+.menu-trigger span:nth-of-type(3) {
+  top: 25px;
+}
+
+ 
+.menu-trigger span:nth-child(4) {
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    top: 27px;
+	color: #178DFC;
+}
+	
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(7px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-13px) rotate(45deg);
+  transform: translateY(-13px) rotate(45deg);
+}
+
+
+/*--------------------------------
+            ハンバーガー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            メニュー<開始>
+----------------------------------*/
+.main-nav{         /*メニューの親*/
+    position: fixed;/*ポジションを端寄せ*/
+    z-index: 2; /*レイヤー２*/
+    top: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.7); /*メニュー背景半透明化*/   
+    text-align: center; /*親の体裁*/
+    transform: translateX(100%); /*メニューを開く*/
+    transition: all 0.6s; /*メニュー（プロパティ全体）が現れるまでに何秒かかるか*/
+    width: 250px;
+	height: 100%;
+	padding-top: 100px; /*メニュー項目を上からどれだけ離すか*/
+}
+ 
+.main-nav ul {
+    list-style: none; /*リストの箇条書きの初期の点を消す*/
+    width: 200px;
+	margin: 0 auto;
+}
+ 
+ 
+.main-nav ul li a {
+    display: inline-block;
+	color: #178DFC;
+    text-decoration: none;
+    padding-top: 25px;
+	font-size: 45px;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.main-nav ul li a:hover {
+	color:#fff;
+	font-size: 50px;
+	text-shadow: 0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+
+
+.main-nav ul li a:after {
+	content: ""; /*afterの指定*/
+	width: 100%;
+	height: 2px;
+	background: #FFFFBB;
+	right: 0;
+	position: absolute;
+	margin-top: 60px;
+	transform: scale(0,1); /*右から線が出る*/
+	transform-origin: right; /*右に隠す*/
+	transition: 0.4s; /*線が出てくる時間*/
+	box-shadow:  0 0 8px white; /*箱に対する影*/
+}
+
+.main-nav ul li a:hover:after{
+	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/	
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.main-nav.active {
+    transform: translateX(0%); /*メニューを閉じる*/
+}
+
+.icon {
+	width: 250px; /*icon親*/
+	position: absolute; /*main-navの中にiconの親の位置はどこに置くか（相対位置）*/
+	bottom: 0; /*相対位置を初期値より下へ*/
+	margin-bottom: 15px; /*a要素にはかからなかたで親の位置を調整する*/
+}
+
+.icon a {
+	font-size: 35px; /*iconはインライン要素なのでfont-sizeで指定*/
+	color: #178DFC; /*上記と同じなのでbackgroundではなくcolorで色付け*/
+    margin-left: 30px; /*iconの位置調整*/
+}
+
+
+.icon a:hover {
+    color:#FBF8CF;
+	font-size: 40px;
+	text-shadow: 
+	0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+/* --------------------------------
+            メニュー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            h1-tittle<開始>
+----------------------------------*/
+
+
+h1 {
+	font-family: Impact;
+	font-size: 100px;
+	margin-left: 1px;
+	color: rgba(255,255,255,0.70);
+	letter-spacing: -0.02em; /*字左右幅調整*/
+	white-space: nowrap; /*文字を折り返さない*/
+}
+
+
+/* --------------------------------
+            h1-tittle<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+          スライド外枠<開始>
+----------------------------------*/
+.content {
+	width: 100%;
+	display: flex; /*中の四角を浮かせる*/
+}
+
+
+.home-content {
+	width: 80%;
+	height: 490px;
+	background-color: rgba(0,0,0,0.50);
+	text-align: center;
+	margin: 0 auto;
+    padding-top: 20px; 
+}
+
+.mini-box {
+	width: 90%;
+	height: 470px;
+	background-color: #fff;
+	margin: auto;
+	justify-content:center;
+	padding-top: 20px;
+}
+
+/* --------------------------------
+         メインスライドショー<開始>
+----------------------------------*/
+
+.container {
+  margin: 0 auto;
+  padding: 0px 40px;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  background: #fff;
+}
+
+.slick-slide {
+  text-align: center;
+  color: #419be0;
+
+  background: white;
+}
+
+.single-item img{
+	width: 100%;
+	height: 409px;
+	
+}
+
+
+/* --------------------------------
+         メインスライドショー<終了>
+----------------------------------*/
+
+/*--------------------------------
+      slick.cssで外観を整える
+slick-theme.cssでnext,インジケーターを作る
+----------------------------------*/
+
+/* --------------------------------
+         メイン画像スライド<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            sub-nav<開始>
+----------------------------------*/
+
+.sub-menu {
+	width: 80%;
+	height: 50px;
+	background-color: rgba(0,0,0,0.8);
+	margin: 0px auto;
+}
+
+.tab-group {
+	display: flex;
+	justify-content: center;
+}
+
+.tab {
+	padding: 0px 20px;
+	cursor:pointer;
+	font-size: 20px;
+}
+
+
+
+.sub-nav ul {	
+	list-style: none;
+	text-align: center;
+    padding-top: 10px;
+}
+
+.sub-nav ul li {
+
+	display: inline-block;
+	color: #178DFC;
+}
+
+
+
+
+
+/* --------------------------------
+            sub-nav<開始>
+----------------------------------*/
+
+
+/* --------------------------------
+            content2<開始>
+----------------------------------*/
+
+.content2 {
+	width: 80%;
+	height: auto;
+	background-color: rgba(0,0,0,0.50);
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.side-content {
+	
+	width: 90%;
+	height: 100%;
+	background-color: #fff;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.side-content a {
+	text-decoration: none;
+	
+	
+}
+
+.side-content img {
+	margin: 5px;
+	border-radius: 10px;
+	border: 0.5px solid #fff;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+	box-shadow: -6px -6px 14px rgba(255, 255, 255, .6),
+                -2px -2px 4px rgba(0, 0, 0, .5),
+                6px 6px 8px rgba(0, 0, 0, .1),
+                2px 2px 8px rgba(23, 141, 252, 1);
+}
+
+
+
+
+.side-content {
+	display: none;
+}
+
+.side-content.is-show{
+	display: block;
+}
+
+.side-content.web img{
+	width: 90%;
+	height: 250px;	
+}
+
+/* --------------------------------
+            content2<終了>
+----------------------------------*/
+
+/* --------------------------------
+            table<開始>
+----------------------------------*/
+
+.table {
+	width: 100%;
+}
+
+
+table{
+	border-collapse: collapse;
+	width: 900px;	
+	margin: 0px auto;
+}
+
+
+table td{
+	background:rgba(255,255,255,0.50);
+	/*background-image: url("../img/fura-2.png");*/
+	border: solid 3px  #000;
+	text-align: center;
+	width: 25%;
+	height: 150px;
+	padding: 15px 0;
+}
+
+table tr td:hover {
+	background:rgba(231,248,97,0.69);
+}
+
+
+/* --------------------------------
+            table<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            footer<開始>
+----------------------------------*/
+
+footer {
+	display:inline-block;
+	width: 100%;
+	height: auto;
+	background: #000;
+	text-align: center;
+    padding-top:15px;
+	color: #178DFC;
+}
+
+
+.sitemap {
+	display: flex;
+	font-size: 10px;
+	color: #178DFC;
+	margin-bottom: 5px;
+	justify-content: center;
+}
+
+.sitemap a {
+	color: #178DFC;
+	text-decoration: none;
+}
+
+.sitemap a:hover {
+	color: #0ad0ff;
+	opacity: 1;
+}
+
+.mae {
+	padding-top: 2px;
+	opacity: 0.5;
+}
+
+.genzai {	
+	font-size: 13px;
+	opacity: 0.6;
+}
+
+
+/* --------------------------------
+            footer<終了>
+----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
