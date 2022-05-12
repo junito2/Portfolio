@@ -265,12 +265,12 @@ nav.main-nav.active {
 	font-family: 'Bodoni 72';
     line-height: 1; /*字上下幅調整*/
 	letter-spacing: 0.3em; /*字左右幅調整*/
-	margin-left: -14px 0 0 20px;
+	margin: -14px 0 0 20px;
 }
 
 .moji2 {
 	font-size:30px;
-	margin-top: -77px;
+	margin-top: 8px;
 	letter-spacing: 0.3em; /*字左右幅調整*/
 }
 /* --------------------------------
