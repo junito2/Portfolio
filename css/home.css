@@ -9,6 +9,9 @@ html {
 	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
 }
 
+body{
+	margin: 0;
+}
 
 /*　--------------------------------
              共有部分<終了>
@@ -182,10 +185,7 @@ html {
 }
 
 .main-nav ul li a:hover:after{
-	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/
-	
-	
-	
+	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/	
 }
 
 /* このクラスを、jQueryで付与・削除する */
@@ -260,17 +260,17 @@ nav.main-nav.active {
     border-radius: 10px;
 }
 
-.moji1,.moji2 {
+.moji1 {
     font-size:80px;
 	font-family: 'Bodoni 72';
-    line-height: 0.7; /*字上下幅調整*/
+    line-height: 1; /*字上下幅調整*/
 	letter-spacing: 0.3em; /*字左右幅調整*/
-	margin-left: 20px;
+	margin-left: -14px 0 0 20px;
 }
 
-.moji3 {
+.moji2 {
 	font-size:30px;
-	margin-top: 10px;
+	margin-top: -77px;
 	letter-spacing: 0.3em; /*字左右幅調整*/
 }
 /* --------------------------------
