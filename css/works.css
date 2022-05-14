@@ -9,6 +9,9 @@ html {
 	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
 }
 
+body{
+	margin: 0;
+}
 
 /*　--------------------------------
              共有部分<終了>
@@ -229,8 +232,9 @@ nav.main-nav.active {
 
 h1 {
 	font-family: Impact;
-	font-size: 100px;
-	margin-left: 1px;
+	font-size: 10vw;
+	margin: 0 0 0 5px;
+	padding-top: 48px;
 	color: rgba(255,255,255,0.70);
 	letter-spacing: -0.02em; /*字左右幅調整*/
 	white-space: nowrap; /*文字を折り返さない*/
