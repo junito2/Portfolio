@@ -284,6 +284,8 @@ footer {
 .mae {
 	/* padding-top: 2px; */
 	opacity: 0.5;
+    font-size: 1vw;
+    padding: 0 10px;
 }
 
 .genzai {	
