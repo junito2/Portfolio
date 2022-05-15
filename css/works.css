@@ -12,7 +12,7 @@
 
 .home-content {
 	width: 90vw;
-	height: 65vh;
+	height: 72vh;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
 	margin: 0 auto;
@@ -21,7 +21,7 @@
 
 .mini-box {
 	width: 80vw;
-	height: 60vh;
+	height: 67vh;
 	background-color: #fff;
 	margin: auto;
 	justify-content:center;
@@ -50,7 +50,7 @@
 
 .single-item img{
 	width: 70vw;
-	height: 56vh;
+	height: 60vh;
 	margin: 0 auto;
 }
 
@@ -75,7 +75,7 @@ slick-theme.cssでnext,インジケーターを作る
 
 .sub-menu {
 	width: 90vw;
-	height: 50px;
+	height: 8vh;
 	background-color: rgba(0,0,0,0.8);
 	margin: 0px auto;
 }
@@ -88,7 +88,7 @@ slick-theme.cssでnext,インジケーターを作る
 .tab {
 	padding: 0px 20px;
 	cursor:pointer;
-	font-size: 20px;
+	font-size: 2vw;
 }
 
 .sub-nav ul {	
