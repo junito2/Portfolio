@@ -5,14 +5,15 @@
           スライド外枠<開始>
 ----------------------------------*/
 .content {
-	width: 100%;
+	/*width: 100%;*/
 	display: flex; /*中の四角を浮かせる*/
+	margin-bottom: 40px;
 }
 
 
 .home-content {
 	width: 90vw;
-	height: 72vh;
+	height: 75vh;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
 	margin: 0 auto;
@@ -49,7 +50,7 @@
 }
 
 .single-item img{
-	width: 70vw;
+	width: 65vw;
 	height: 60vh;
 	margin: 0 auto;
 }
