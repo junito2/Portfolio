@@ -49,9 +49,9 @@
 }
 
 .single-item img{
-	width: 100%;
+	width: 70vw;
 	height: 56vh;
-	
+	margin: 0 auto;
 }
 
 
