@@ -367,7 +367,7 @@ slick-theme.cssでnext,インジケーターを作る
 
 .side-content {
 	width: 80vw;
-	height: 100%;
+	height: 55vh;
 	background-color: #fff;
 	margin: auto;
 	padding-top: 20px;
@@ -379,6 +379,7 @@ slick-theme.cssでnext,インジケーターを作る
 }
 
 .side-content img {
+	width: 13vw;
 	margin: 5px;
 	border-radius: 10px;
 	border: 0.5px solid #fff;
