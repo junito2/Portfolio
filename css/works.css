@@ -203,7 +203,7 @@ table tr td:hover {
 
 footer {
 	display:inline-block;
-	width: 100%;
+	width: 100vw;
 	height: auto;
 	background: #000;
 	text-align: center;
@@ -223,6 +223,7 @@ footer {
 .sitemap a {
 	color: #178DFC;
 	text-decoration: none;
+	padding-top: 8px;
 }
 
 .sitemap a:hover {
@@ -231,7 +232,7 @@ footer {
 }
 
 .mae {
-	padding-top: 2px;
+	/* padding-top: 2px; */
 	opacity: 0.5;
 }
 
