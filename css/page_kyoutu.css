@@ -22,7 +22,7 @@ body{
 ----------------------------------*/
 #home{ /*ホーム全体に画像を広げるにはbody内のdivを指定する*/
 
-	background-repeat: repeat-y; /*繰り返さない*/
+	/*background-repeat: repeat-y; 繰り返さない*/
 	background-image: url("../img/back.png");
 	height: auto; /*高さを変えても合わせてくれる*/
 }
