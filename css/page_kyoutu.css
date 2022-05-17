@@ -291,7 +291,7 @@ footer {
 .genzai {	
 	font-size: 13px;
 	opacity: 1;
-    color: #0ad0ff;
+    color: #0ad0ff !important;
 }
 
 
