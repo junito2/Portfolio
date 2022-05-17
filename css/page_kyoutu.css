@@ -251,8 +251,8 @@ h1 {
 ----------------------------------*/
 
 footer {
-	display:inline-block;
-	width: 100vw;
+	/*display:inline-block;
+	width: 100vw;*/
 	height: auto;
 	background: #000;
 	text-align: center;
