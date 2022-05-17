@@ -232,9 +232,9 @@ nav.main-nav.active {
 
 h1 {
 	font-family: Impact;
-	font-size: 10vw;
+	font-size: 9vw;
 	margin: 0 0 30px 5px;
-	padding-top: 48px;
+	/*padding-top: 48px;*/
 	color: rgba(255,255,255,0.70);
 	letter-spacing: -0.02em; /*字左右幅調整*/
 	white-space: nowrap; /*文字を折り返さない*/
@@ -263,7 +263,7 @@ footer {
 
 .sitemap {
 	display: flex;
-	font-size: 10px;
+	/*font-size: 10px;*/
 	color: #178DFC;
 	margin-bottom: 5px;
 	justify-content: center;
