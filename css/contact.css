@@ -2,13 +2,12 @@
 /* CSS Document */
 
 .content {
-	width: 100%;
 	display: flex; /*中の四角を浮かせる*/
     padding: 20px;
 }
 
 .home-content {
-	width: 80%;
+	width: 80vw;
 	height: 720px;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
@@ -16,7 +15,7 @@
 }
 
 .mini {	
-	width: 90%;
+	width: 72vw;
 	height: 700px;
 	margin: 10px auto;
 	display: flex;
@@ -227,11 +226,6 @@ input[type=radio]:checked + .radio03::after {
 }
 
 
-
-
-
-
-
 input[type=checkbox] {
     display: none;
 }
@@ -276,9 +270,6 @@ input[type=checkbox]:checked + .checkbox02::before {
 input[type=checkbox]:checked + .checkbox02::after {
     opacity: 1;
 }
-
-
-
 
 
 input[type=radio] {
@@ -353,5 +344,3 @@ input[type=radio]:checked + .check:after {
 	color: #178DFC;
 	background: #fff;
 }
-
-
