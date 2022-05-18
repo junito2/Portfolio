@@ -5,13 +5,12 @@
             home<開始>
 ----------------------------------*/
 .content {
-	width: 100%;
 	display: flex; /*中の四角を浮かせる*/
     padding: 20px;
 }
 
 .home-content {
-	width: 80%;
+	width: 80vw;
 	height: 650px;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
@@ -19,7 +18,7 @@
 }
 
 .mini {	
-	width: 90%;
+	width: 72vw;
 	height: 650px;
 	margin: 10px auto;
 	display: flex;
@@ -27,16 +26,16 @@
 }
 
 .mini-box {		
-	width: 40%;
+	width: 30vw;
 	height: 550px;
 	background: #178DFC;
 }
 
 .mini-box1 {		
-	width: 60%;
+	width: 55vw;
 	height: 550px;
 	background: #fff;
-    padding: 5px 20px;	
+    padding: 0 20px;	
 }
 
 
@@ -438,7 +437,7 @@
 
 /* --------------------------------
             footer<開始>
-----------------------------------*/
+
 
 
 footer {
@@ -483,19 +482,3 @@ footer {
 /* --------------------------------
             footer<終了>
 ----------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
