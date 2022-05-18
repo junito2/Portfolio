@@ -22,7 +22,6 @@
 	height: 650px;
 	margin: 10px auto;
 	display: flex;
-	
 }
 
 .mini-box {		
@@ -134,7 +133,6 @@
 }
 
 .list3:hover .ch2 {
-	
 	display: inline;
 }
 
@@ -152,7 +150,7 @@
 ----------------------------------*/
 
 .home-content_2 {
-	width: 80%;
+	width: 80vw;
 	height: 800px;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
@@ -161,7 +159,7 @@
 
 
 .mini_2 {	
-	width: 90%;
+	width: 72vw;
 	height: 400px;
 	margin: 10px auto 0 auto;
 	display: flex;
@@ -197,7 +195,7 @@
 
 
 .home-content_3 {
-	width: 80%;
+	width: 80vw;
 	height: auto;
 	background-color: rgba(0,0,0,0.50);
 	text-align: center;
@@ -205,7 +203,7 @@
 }
 
 .mini_3 {	
-	width: 90%;
+	width: 72vw;
 	height: auto;
 	padding: 10px 0;
 	margin: 10px auto 30px;
