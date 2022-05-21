@@ -2,445 +2,257 @@
 /* CSS Document */
 
 /* --------------------------------
-            home<開始>
+            共有部分<開始>
 ----------------------------------*/
-.content {
-	display: flex; /*中の四角を浮かせる*/
-    padding: 20px;
+
+html {
+	font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
 }
 
-.home-content {
-	width: 80vw;
-	height: 650px;
-	background-color: rgba(0,0,0,0.50);
-	text-align: center;
-	margin: 0 auto;
+body{
+	margin: 0;
 }
 
-.mini {	
-	width: 72vw;
-	height: 650px;
-	margin: 10px auto;
+/*　--------------------------------
+             共有部分<終了>
+----------------------------------*/
+
+/* --------------------------------
+         大きな背景画像<開始>
+----------------------------------*/
+#home{ /*ホーム全体に画像を広げるにはbody内のdivを指定する*/
+
+	/*background-repeat: repeat-y; 繰り返さない*/
+	background-image: url("../img/back.png");
+	height: auto; /*高さを変えても合わせてくれる*/
+}
+
+
+/* --------------------------------
+         大きな背景画像<終了>
+----------------------------------*/
+
+
+
+/* --------------------------------
+            ハンバーガー<開始>
+----------------------------------*/
+
+.page-header{
 	display: flex;
 }
 
-.mini-box {		
-	width: 30vw;
-	height: 550px;
-	background: #178DFC;
+#menu {
+	width: 47px;
+	height: 43px;
+	background: #000;
 }
 
-.mini-box1 {		
-	width: 55vw;
-	height: 550px;
-	background: #fff;
-    padding: 0 20px;	
+#menu.active {
+	background:rgba(0,0,0,0.00);
 }
 
 
-.mini-box2 {		
-	width: 60%;
-	height: 400px;
-	background: #fff;
-    padding: 5px 20px;	
-}
 
-.moji1 {
-	font-size:30px;
-	margin-top: 10px;
-	letter-spacing: 0.3em; /*字左右幅調整*/
-	color: #fff;
-	font-family:"Arial Black", Gadget, "sans-serif";
-}
-/* --------------------------------
-            home<終了>
-----------------------------------*/
-
-/* --------------------------------
-            profireの切り替え<開始>
-----------------------------------*/
-
-.hyo {
-	margin: 0 auto 20px;
-	font-size: 20px;
-	color: #178DFC;
-	width: 90%;
-	font-family:"Comic Sans MS";
-    
-}
-
-.list1 {
-	text-align: left;
-	margin-top: 0;
-	margin-bottom: 0;
-	font-family:"Comic Sans MS";
-    font-weight: bold;
-}
-
-
-.list2 {
-	text-align: center;
-	border-bottom: 2px solid #178DFC;
-}
-
-.ch1 {
+.menu-trigger {
+    display: block;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    top: 20px;    
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;	
+	border-radius: 10px;
 	
 }
-
-
-.ch2 {
-	font-family: "HiraKakuProN-W6" ;
-    
+ 
+.menu-trigger span {
+    display: block;
+    position: absolute;    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #178DFC;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+	border-radius: 5px;
+}
+ 
+.menu-trigger span:nth-of-type(1) {
+  top: 5px
+}
+.menu-trigger span:nth-of-type(2) {
+  width: 20px;
+  top: 15px;
+}
+.menu-trigger span:nth-of-type(3) {
+  top: 25px;
 }
 
-.list1 .ch1,.list2 .ch1{
-	display: inline;
+ 
+.menu-trigger span:nth-child(4) {
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    top: 27px;
+	color: #178DFC;
+}
+	
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(7px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-13px) rotate(45deg);
+  transform: translateY(-13px) rotate(45deg);
 }
 
-.list1:hover .ch1,.list2:hover .ch1{
-	display: none;
+
+/*--------------------------------
+            ハンバーガー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            メニュー<開始>
+----------------------------------*/
+.main-nav{         /*メニューの親*/
+    position: fixed;/*ポジションを端寄せ*/
+    z-index: 2; /*レイヤー２*/
+    top: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.7); /*メニュー背景半透明化*/   
+    text-align: center; /*親の体裁*/
+    transform: translateX(100%); /*メニューを開く*/
+    transition: all 0.6s; /*メニュー（プロパティ全体）が現れるまでに何秒かかるか*/
+    width: 250px;
+	height: 100%;
+	padding-top: 100px; /*メニュー項目を上からどれだけ離すか*/
+}
+ 
+.main-nav ul {
+    list-style: none; /*リストの箇条書きの初期の点を消す*/
+    width: 200px;
+	margin: 0 auto;
+}
+ 
+ 
+.main-nav ul li a {
+    display: inline-block;
+	color: #178DFC;
+    text-decoration: none;
+    padding-top: 25px;
+	font-size: 45px;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.main-nav ul li a:hover {
+	color:#fff;
+	font-size: 50px;
+	text-shadow: 0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
 }
 
-.list1 .ch2 ,.list2 .ch2{
-	display: none;
-}
-
-.list1:hover .ch2,.list2:hover .ch2 {
-	display: inline;
-}
 
 
-.list1.second{
-	padding-top: 20px;
-}
-
-
-.list3 {
-	border-bottom: 2px solid #178DFC;
-}
-
-.list3 .ch1{
+.main-nav ul li a:after {
+	content: ""; /*afterの指定*/
 	width: 100%;
-	display: inline;
+	height: 2px;
+	background: #FFFFBB;
+	right: 0;
+	position: absolute;
+	margin-top: 60px;
+	transform: scale(0,1); /*右から線が出る*/
+	transform-origin: right; /*右に隠す*/
+	transition: 0.4s; /*線が出てくる時間*/
+	box-shadow:  0 0 8px white; /*箱に対する影*/
 }
 
-.list3:hover .ch1{
-	display: none;
+.main-nav ul li a:hover:after{
+	transform: scale(1,1); /*線が出てくる対比１：１（左：右）*/	
 }
 
-.list3 .ch2 {
-	display: none;
+/* このクラスを、jQueryで付与・削除する */
+nav.main-nav.active {
+    transform: translateX(0%); /*メニューを閉じる*/
 }
 
-.list3:hover .ch2 {
-	display: inline;
+.icon {
+	width: 250px; /*icon親*/
+	position: absolute; /*main-navの中にiconの親の位置はどこに置くか（相対位置）*/
+	bottom: 0; /*相対位置を初期値より下へ*/
+	margin-bottom: 15px; /*a要素にはかからなかたで親の位置を調整する*/
 }
 
-.shikaku_box {
-	padding-left: 16px;
-    background: linear-gradient(#178DFC 2px, transparent 1px) repeat left bottom;
-    background-size: auto 2.5em;
-	line-height: 2.5em;
-	overflow: hidden;
+.icon a {
+	font-size: 35px; /*iconはインライン要素なのでfont-sizeで指定*/
+	color: #178DFC; /*上記と同じなのでbackgroundではなくcolorで色付け*/
+    margin-left: 30px; /*iconの位置調整*/
+}
+
+
+.icon a:hover {
+    color:#FBF8CF;
+	font-size: 40px;
+	text-shadow: 
+	0 0 3px #FFFFBB,
+	0 0 10px #000,
+	0 0 30px #FFFFBB,
+	0 0 40px #188DFD,
+	0 0 70px #188DFD,
+	0 0 80px #188DFD,
+	0 0 90px #1F40FF,
+	0 0 100px #1F40FF,
+	0 0 110px #1F40FF;
+}
+
+/* --------------------------------
+            メニュー<終了>
+----------------------------------*/
+
+
+/* --------------------------------
+            h1-tittle<開始>
+----------------------------------*/
+
+
+h1 {
+	font-family: Impact;
+	font-size: 9vw;
+	margin: 0 0 30px 5px;
+	/*padding-top: 48px;*/
+	color: rgba(255,255,255,0.70);
+	letter-spacing: -0.02em; /*字左右幅調整*/
+	white-space: nowrap; /*文字を折り返さない*/
 }
 
 
 /* --------------------------------
-            profireの切り替え<終了>
+            h1-tittle<終了>
 ----------------------------------*/
-
-.home-content_2 {
-	width: 80vw;
-	height: 800px;
-	background-color: rgba(0,0,0,0.50);
-	text-align: center;
-	margin: 0 auto;
-}
-
-
-.mini_2 {	
-	width: 72vw;
-	height: 400px;
-	margin: 10px auto 0 auto;
-	display: flex;
-}
-
-.mini-box_2 {		
-	width: 55%;
-	height: 400px;
-	background: #fff;
-	display: flex;
-	flex-direction: column;
-}
-
-
-.tya-to1 {
-	flex-grow: 2;
-}
-.tya-to2 {
-	padding: 30px 5px 0 0 ;
-	flex-grow: 1;
-}
-
-.tya-to3 {
-	flex-grow: 2;
-}
-
-.bikou {
-	width: 90%;
-	height: 300px;
-	background: #fff;
-	margin: 0 auto;
-}
-
-
-.home-content_3 {
-	width: 80vw;
-	height: auto;
-	background-color: rgba(0,0,0,0.50);
-	text-align: center;
-	margin: 0 auto;
-}
-
-.mini_3 {	
-	width: 72vw;
-	height: auto;
-	padding: 10px 0;
-	margin: 10px auto 30px;
-	display: flex;
-	background: #fff;
-	text-align: left;
-	color: #178DFC;
-}
-
-.ch1.bityousei {
-	text-align: left
-}
-
-
-
-
-/* ----------------------------------------------------------------
-   star１つ目の三角形（※２つの三角を組み合わせて★を作っています）<開始>
-------------------------------------------------------------------*/
-
-.star {
-	text-align: center;
-	border-bottom: 2px solid #178DFC;
-	display: flex;
-}
-
-.star-box1{
-	margin: 0 auto;
-    display: flex;
-}
-
-
-
-.star-fav {
-    margin: 15px 2px ;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #0ad0ff;
-    display: block;
-    height: 0;
-    width: 0;
-    position: relative;
-    animation:
-        anim-star-fav-rotate 30s linear infinite;
-}
-
-.star-fav:before,
-.star-fav:after {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #0ad0ff;
-    content: '';
-    display: block;
-    height: 0;
-    left: -15px;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-.star-fav:before {
-    transform: rotate(71deg);
-}
-.star-fav:after {
-    transform: rotate(-71deg);
-}
-@keyframes anim-star-fav-rotate {
-    from { transform: rotate(35deg);}
-    to { transform: rotate(395deg);}
-}
-@keyframes anim-star-fav-opacity {
-    0%   { opacity: 1;}
-    50%  { opacity: 0.5;}
-    100% { opacity: 1;}
-}
-
-
-.star-box1 span.star-fav:nth-child(5) {
-    margin: 15px 2px ;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #A9A9A9;
-    display: block;
-    height: 0;
-    width: 0;
-    position: relative;
-    animation:
-        anim-star-fav-rotate 30s linear infinite;
-}
-
-.star-box1 span.star-fav:nth-child(5):before,
-.star-box1 span.star-fav:nth-child(5):after {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #A9A9A9;
-    content: '';
-    display: block;
-    height: 0;
-    left: -15px;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-.star-box1 span.star-fav:nth-child(5):before {
-    transform: rotate(71deg);
-}
-.star-box1 span.star-fav:nth-child(5):after {
-    transform: rotate(-71deg);
-}
-@keyframes anim-star-fav-rotate {
-    from { transform: rotate(35deg);}
-    to { transform: rotate(395deg);}
-}
-@keyframes anim-star-fav-opacity {
-    0%   { opacity: 1;}
-    50%  { opacity: 0.5;}
-    100% { opacity: 1;}
-}
-
-
-
-/* ----------------------------------------------------------------
-   star１つ目の三角形（※２つの三角を組み合わせて★を作っています）<終了>
-------------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-   star２つ目の三角形（※２つの三角を組み合わせて★を作っています）<開始>
-------------------------------------------------------------------*/
-
-.star-box2{
-	margin: 0 auto;
-    display: flex;
-}
-
-
-
-.star-fav {
-    margin: 15px 2px ;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #0ad0ff;
-    display: block;
-    height: 0;
-    width: 0;
-    position: relative;
-    animation:
-        anim-star-fav-rotate 30s linear infinite;
-}
-
-.star-fav:before,
-.star-fav:after {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #0ad0ff;
-    content: '';
-    display: block;
-    height: 0;
-    left: -15px;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-.star-fav:before {
-    transform: rotate(71deg);
-}
-.star-fav:after {
-    transform: rotate(-71deg);
-}
-@keyframes anim-star-fav-rotate {
-    from { transform: rotate(35deg);}
-    to { transform: rotate(395deg);}
-}
-@keyframes anim-star-fav-opacity {
-    0%   { opacity: 1;}
-    50%  { opacity: 0.5;}
-    100% { opacity: 1;}
-}
-
-
-.star-box2 span.star-fav:nth-child(4),.star-box2 span.star-fav:nth-child(5) {
-    margin: 15px 2px ;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #A9A9A9;
-    display: block;
-    height: 0;
-    width: 0;
-    position: relative;
-    animation:
-        anim-star-fav-rotate 30s linear infinite;
-}
-
-.star-box2 span.star-fav:nth-child(4):before,.star-box2 span.star-fav:nth-child(5):before,
-.star-box2 span.star-fav:nth-child(4):after,.star-box2 span.star-fav:nth-child(5):after {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #A9A9A9;
-    content: '';
-    display: block;
-    height: 0;
-    left: -15px;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-.star-box2 span.star-fav:nth-child(4):before,.star-box2 span.star-fav:nth-child(5):before {
-    transform: rotate(71deg);
-}
-.star-box2 span.star-fav:nth-child(4):after,.star-box2 span.star-fav:nth-child(5):after {
-    transform: rotate(-71deg);
-}
-@keyframes anim-star-fav-rotate {
-    from { transform: rotate(35deg);}
-    to { transform: rotate(395deg);}
-}
-@keyframes anim-star-fav-opacity {
-    0%   { opacity: 1;}
-    50%  { opacity: 0.5;}
-    100% { opacity: 1;}
-}
-
-
-
-/* ----------------------------------------------------------------
-   star２つ目の三角形（※２つの三角を組み合わせて★を作っています）<終了>
-------------------------------------------------------------------*/
-
-
 
 
 /* --------------------------------
             footer<開始>
-
-
+----------------------------------*/
 
 footer {
-	display:inline-block;
-	width: 100%;
+	/*display:inline-block;
+	width: 100vw;*/
 	height: auto;
 	background: #000;
 	text-align: center;
@@ -448,17 +260,20 @@ footer {
 	color: #178DFC;
 }
 
+
 .sitemap {
 	display: flex;
-	font-size: 10px;
+	/*font-size: 10px;*/
 	color: #178DFC;
-	margin-bottom: 5px;
 	justify-content: center;
 }
 
 .sitemap a {
 	color: #178DFC;
 	text-decoration: none;
+	/*padding-top: 12px;*/
+	font-size: 1.5vw;
+    margin: -6px 10px 10px 10px;
 }
 
 .sitemap a:hover {
@@ -467,13 +282,16 @@ footer {
 }
 
 .mae {
-	padding-top: 2px;
+	/* padding-top: 2px; */
 	opacity: 0.5;
+    font-size: 1vw;
+    /*padding: 0 10px;*/
 }
 
 .genzai {	
 	font-size: 13px;
-	opacity: 0.6;
+	opacity: 1;
+    color: #0ad0ff !important;
 }
 
 
