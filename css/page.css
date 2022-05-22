@@ -189,15 +189,15 @@
 
 
 .leftbox {
-	width: 100%;
+	/*width: 100%;*/
 	margin-right: 0;
     overflow: hidden;
 }
 
 .box {
 	display: flex;/*横並び*/
-	width: 80%;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
-	height: 200px;	
+	width: 90vw;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
+	/*height: 200px;*/	
 }
 
 .box img:nth-child(1){
@@ -246,9 +246,9 @@
 
 
 .box2 {
-	width: 80%;/*箱全体のサイズ（横縮小対応大元の箱）*/
+	width: 70vw;/*箱全体のサイズ（横縮小対応大元の箱）*/
 	margin-bottom: 50px;
-	height: auto;
+	/*height: auto;*/
 	color: #178DFC
 }
 
@@ -257,8 +257,6 @@
     -webkit-transform: translate(0, 0);
   	opacity: 1;
 	background-color:#fff;
-	width: 80%;/*個々の箱の大きさ（横縮小対応）*/
-	
 }
 
 .box2 h2.move,.box2 p.move {
@@ -277,28 +275,23 @@
 
 
 .rightbox {
-	width: 100%;
+	/*width: 100%;*/
 	margin: 0 0 0 auto;/*右寄せの裏技。画面縮小しても左は自動に調整してくれる*/
     overflow: hidden;
-	
 }
 
 .box3 {
 	display: flex;/*横並び*/
 	flex-flow: row-reverse;/*順番の入れ替え*/
-	width: 70%;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
+	width: 90vw;/*箱全体のサイズ横全体を縮小に合わせて大元の箱を作る*/
 	height: auto;	
-	margin-left: 30%;
-
+	margin-left: 10vw;
 }
 
 .box3 img {
-	width: 100%;
-    
     background-color: #ADADAD;
 	z-index: 3;
 }
-
 
 .box3 img:nth-child(2){
     -webkit-transition: all 6s;
@@ -306,7 +299,6 @@
     opacity: 1;
 	background-color:#636363;
 	z-index: 2;
-	width: 100%;
 }
 
 
@@ -321,7 +313,6 @@
     -webkit-transform: translate(0, 0);
   	opacity: 1;
 	background-color:#ADADAD;
-	width: 100%;/*個々の箱の大きさ（横縮小対応）*/
 	z-index: 1;
 }
 .box3 img:nth-child(3).move {
@@ -332,7 +323,7 @@
 
 
 .box4 {
-	width: 60%;/*箱全体のサイズ（横縮小対応大元の箱）*/
+	width: 70vw;/*箱全体のサイズ（横縮小対応大元の箱）*/
 	margin: 0 0 20px auto;/*右寄せの裏技。画面縮小しても左は自動に調整してくれる*/
 	color: #178DFC;
 }
