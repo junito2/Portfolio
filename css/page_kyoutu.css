@@ -122,7 +122,7 @@ body{
 ----------------------------------*/
 .main-nav{         /*メニューの親*/
     position: fixed;/*ポジションを端寄せ*/
-    z-index: 2; /*レイヤー２*/
+    z-index: 5; /*レイヤー5*/
     top: 0;
     right: 0;
     background-color:rgba(0,0,0,0.7); /*メニュー背景半透明化*/   
