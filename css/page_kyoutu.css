@@ -60,7 +60,7 @@ body{
     right: 13px;
     top: 20px;    
     cursor: pointer;
-    z-index: 3;
+    z-index: 7;
     text-align: center;	
 	border-radius: 10px;
 	
@@ -89,7 +89,7 @@ body{
   top: 25px;
 }
 
- 
+
 .menu-trigger span:nth-child(4) {
     border: none;
     font-size: 9px;
@@ -98,7 +98,6 @@ body{
 	color: #178DFC;
 }
 	
-
 .menu-trigger.active span:nth-of-type(1) {
   -webkit-transform: translateY(7px) rotate(-45deg);
   transform: translateY(7px) rotate(-45deg);
@@ -166,8 +165,6 @@ body{
 	0 0 110px #1F40FF;
 }
 
-
-
 .main-nav ul li a:after {
 	content: ""; /*afterの指定*/
 	width: 100%;
@@ -228,8 +225,6 @@ nav.main-nav.active {
 /* --------------------------------
             h1-tittle<開始>
 ----------------------------------*/
-
-
 h1 {
 	font-family: Impact;
 	font-size: 9vw;
@@ -239,8 +234,6 @@ h1 {
 	letter-spacing: -0.02em; /*字左右幅調整*/
 	white-space: nowrap; /*文字を折り返さない*/
 }
-
-
 /* --------------------------------
             h1-tittle<終了>
 ----------------------------------*/
@@ -249,7 +242,6 @@ h1 {
 /* --------------------------------
             footer<開始>
 ----------------------------------*/
-
 footer {
 	/*display:inline-block;
 	width: 100vw;*/
