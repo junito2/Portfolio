@@ -5,7 +5,7 @@
           メイン画像<開始>
 ----------------------------------*/
 .content {
-	width: 100%;
+	/*width: 100%;*/
 	display: flex; /*中の四角を浮かせる*/
 }
 
@@ -64,7 +64,7 @@
 
 
 .home-content.active { /*jqueryでbuttonにクリック処理をして、その後どうcssで処理したいか指示を与える（active）*/
-	width: 100%;
+	width: 90vw;
 	margin-left: 40px;
 	padding-right: 5px;
 	-webkit-transition: all 4s;
